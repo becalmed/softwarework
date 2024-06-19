@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="me.zhengjie.modules.system.mapper.ReplyMapper">
+    <resultMap id="BaseResultMap" type="me.zhengjie.modules.system.domain.Reply">
+        <id column="id" property="id"/>
+        <result column="did" property="did"/>
+        <result column="content" property="content"/>
+        <result column="create_time" property="createTime"/>
+        <result column="user_id" property="userId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, did, content, create_time, user_id
+    </sql>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from reply
+        <where>
+        </where>
+        order by id desc
+    </select>
+</mapper>
